@@ -35,7 +35,7 @@ class google_sheets:
     """
 
     if isinstance(data, list):
-      self.sheet.update(f"A{start_row}", data)
+      self.sheet.update(f"{chr(64+start_col)}{start_row}", data)
     elif isinstance(data, pd.DataFrame):
       set_with_dataframe(self.sheet, data, include_index=False, row=start_row, col=start_col)
     else:
